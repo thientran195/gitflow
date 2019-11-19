@@ -16,7 +16,7 @@ Develop branch is use for the staging / preproduction environments.
 
 #### feature
 
-> feature/trello-<issue-number>
+> feature/trello-[issue-number]
 
 Features branches are use to create new feature or bug fixes in development environment.
 
@@ -24,7 +24,7 @@ Features branches are use to create new feature or bug fixes in development envi
 
 #### release
 
-> release/v<tag-version>
+> release/v[tag-version]
 
 Releases branches are use to deliver new features in production environment, they can be create
 to update only the CHANGELOG.md or to switch off from the develop branch to avoid to include
@@ -34,7 +34,7 @@ in the release scope unwanted features.
 
 ##### hotfix
 
-> hotfix/trello-<issue-number>
+> hotfix/trello-[issue-number]
 
 Hotfixes branches are use to bug fixes in production environment.
 
@@ -84,7 +84,7 @@ git pull
 Create your new feature branch from **develop** branch.
 
 ```
-git checkout -b feature/trello-<issue-number>
+git checkout -b feature/trello-[issue-number]
 ```
 
 >:warning: **Warning** !
@@ -93,7 +93,7 @@ git checkout -b feature/trello-<issue-number>
 >Before to execute above command, do the following command to check if nobody has already create / merge a branch with this name :
 >
 >```
->git log | grep 'feature/trello-<issue-number>
+>git log | grep 'feature/trello-[issue-number]
 >```
 >
 
@@ -185,20 +185,20 @@ Merge to the develop branch
 
 ```
 git checkout develop
-git merge --no-ff release/trello-<issue-number>
+git merge --no-ff release/trello-[issue-number]
 ```
 
 Merge to the master branch
 
 ```
 git checkout master
-git merge --no-ff release/trello-<issue-number>
+git merge --no-ff release/trello-[issue-number]
 ```
 
 Create a new tag to keep Git log history clear
 
 ```
-git tag -a v<tag-version>
+git tag -a v[tag-version]
 git push --tags
 ```
 
@@ -208,7 +208,7 @@ Go to your production environment, fetch and deploy your new tag
 
 ```
 git fetch --tags
-git checkout tags/v<tag-version>
+git checkout tags/v[tag-version]
 ```
 
 ### Bug fix in production
@@ -228,7 +228,7 @@ git pull
 #### 2. Create your hotfix branch
  
 ```
-git checkout -b hotfix/trello-<issue-number>
+git checkout -b hotfix/trello-[issue-number]
 ```
  
 #### 3. Fix the issue
@@ -259,20 +259,20 @@ Merge to the develop branch
 
 ```
 git checkout develop
-git merge --no-ff hotfix/trello-<issue-number>
+git merge --no-ff hotfix/trello-[issue-number]
 ```
 
 Merge to the master branch
 
 ```
 git checkout master
-git merge --no-ff hotfix/trello-<issue-number>
+git merge --no-ff hotfix/trello-[issue-number]
 ```
 
 Create a new tag to keep Git log history clear
 
 ```
-git tag -a v<tag-version>
+git tag -a v[tag-version]
 git push --tags
 ```
 
@@ -281,7 +281,7 @@ Example : `git tag -a v1.0.0`
 And finally remove the hotfix branch
 
 ```
-git branch -D hotfix/trello-<issue-number>
+git branch -D hotfix/trello-[issue-number]
 ```
 
 
